@@ -1,0 +1,12 @@
+# 考试报名信息采集与审核管理系统 · 运行时依赖
+# 用兼容区间而非锁死补丁版本：部署沙箱的 Python 版本可能与本地不同，
+# 锁死版本（如 numpy==2.5.3）会与 onnxruntime 的 numpy 约束冲突导致 pip 解析失败。
+fastapi>=0.110,<1.0
+uvicorn>=0.20
+pydantic>=2.0,<3.0
+pillow>=10.0
+PyJWT>=2.0,<3.0
+numpy>=1.24,<3.0
+openpyxl>=3.0
+# 证件照本地抠图引擎（module 12，惰性导入；缺失时前端自动退回远程引擎）
+onnxruntime>=1.16
